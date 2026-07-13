@@ -41,10 +41,13 @@ const { title } = Astro.props;
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
       >
         <div class="flex items-center gap-2">
-          <!-- Logo de texto (usaremos esto hasta que tengas el logo real) -->
-          <span class="text-2xl font-extrabold text-brand-dark"
-            >I love<span class="text-brand-teal"> my pet</span></span
-          >
+          <a href="/" class="flex items-center">
+            <img
+              src="/logo-pets.PNG"
+              alt="I love my pet"
+              class="h-12 w-auto object-contain"
+            />
+          </a>
         </div>
 
         <!-- Navegación -->
@@ -99,7 +102,7 @@ const { title } = Astro.props;
       <slot />
     </main>
 
-    <!-- FOOTER -->
+    <!-- FOOTER (CORREGIDO) -->
     <footer class="bg-[#029EA1] text-white pt-14 pb-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
@@ -107,42 +110,41 @@ const { title } = Astro.props;
         >
           <!-- Col 1: Logo y descripción -->
           <div class="col-span-1 lg:col-span-1">
-            <!-- Logo con el corazón dentro de love -->
-            <div class="text-2xl font-bold text-white leading-tight mb-4">
-              I <span class="text-[#1B2435] text-2xl">🩵</span>ve<br />
-              <span class="text-[#1B2435] text-2xl">my</span> pet
-            </div>
-            <!-- CAMBIO 1: Texto más grande y con peso medio -->
+            <!-- LOGO REAL EN EL FOOTER -->
+            <a href="/" class="block mb-4">
+              <!-- Si tu logo es .png, déjalo así. Si es .jpg o .svg, cambia la extensión -->
+              <img
+                src="/logo-pets.PNG"
+                alt="I love my pet"
+                class="h-12 w-auto object-contain brightness-0 invert"
+              />
+            </a>
             <p
-              class="text-white/80 text-[15px] font-medium leading-relaxed max-w-[240px]"
+              class="text-white/80 text-[14px] font-medium leading-relaxed max-w-[240px]"
             >
               Clínica veterinaria y tienda para mascotas en Managua, Nicaragua.
               Cuidamos a tu mejor amigo como si fuera parte de nuestra familia.
             </p>
             <!-- Redes Sociales -->
             <div class="flex gap-3 mt-6">
-              <!-- Facebook -->
               <a
                 href="#"
                 class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
               >
                 <FacebookLogo size={18} color="#029EA1" weight="bold" />
               </a>
-              <!-- Instagram -->
               <a
                 href="#"
                 class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
               >
                 <InstagramLogo size={18} color="#029EA1" weight="bold" />
               </a>
-              <!-- WhatsApp -->
               <a
                 href="#"
                 class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
               >
                 <WhatsappLogo size={18} color="#029EA1" weight="bold" />
               </a>
-              <!-- TikTok -->
               <a
                 href="#"
                 class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
@@ -159,7 +161,6 @@ const { title } = Astro.props;
           <!-- Col 2: Enlaces -->
           <div>
             <h4 class="font-bold text-white text-[17px] mb-5">Enlaces</h4>
-            <!-- CAMBIO 2: Texto más grande y con peso medio -->
             <ul class="space-y-2.5 text-[15px] font-medium text-white/80">
               <li>
                 <a href="/" class="hover:text-white transition">Inicio</a>
@@ -188,7 +189,6 @@ const { title } = Astro.props;
           <!-- Col 3: Servicios -->
           <div>
             <h4 class="font-bold text-white text-[17px] mb-5">Servicios</h4>
-            <!-- CAMBIO 3: Texto más grande y con peso medio -->
             <ul class="space-y-2.5 text-[15px] font-medium text-white/80">
               <li>
                 <a href="/servicios" class="hover:text-white transition"
@@ -221,24 +221,19 @@ const { title } = Astro.props;
           <!-- Col 4: Contacto -->
           <div>
             <h4 class="font-bold text-white text-[17px] mb-5">Contacto</h4>
-            <!-- CAMBIO 4: Texto más grande y con peso medio -->
             <ul class="space-y-3 text-[15px] font-medium">
-              <!-- Teléfono Fijo -->
               <li class="flex items-center gap-3 text-white/90">
                 <Phone size={18} color="white" weight="bold" />
                 <span>8888 1234</span>
               </li>
-              <!-- WhatsApp -->
               <li class="flex items-center gap-3 text-white/90">
                 <WhatsappLogo size={18} color="white" weight="fill" />
                 <span>8500 5678</span>
               </li>
-              <!-- Email -->
               <li class="flex items-center gap-3 text-white/90">
                 <EnvelopeSimple size={18} color="white" weight="fill" />
                 <span>info@ilovemypet.com.ni</span>
               </li>
-              <!-- Ubicación -->
               <li class="flex items-center gap-3 text-white/90">
                 <MapPin size={18} color="white" weight="fill" />
                 <span>Managua, Nicaragua</span>
@@ -252,7 +247,6 @@ const { title } = Astro.props;
           class="border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between text-[13px] text-white/70"
         >
           <span>© 2024 I Love My Pet. Todos los derechos reservados.</span>
-          <!-- Huella blanca a la derecha -->
           <PawPrint
             size={22}
             color="white"
