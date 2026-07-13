@@ -33,24 +33,23 @@ const { title } = Astro.props;
     />
   </head>
   <body class="bg-brand-white text-brand-dark font-['Poppins'] antialiased">
-    <!-- AQUÍ IRÁ EL HEADER (lo crearemos después) -->
+    <!-- HEADER CON MENÚ HAMBURGUESA RESPONSIVE -->
     <header
       class="bg-white shadow-sm sticky top-0 z-50 border-b border-brand-cream"
     >
       <div
         class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
       >
-        <div class="flex items-center gap-2">
-          <a href="/" class="flex items-center">
-            <img
-              src="/logo-pets.PNG"
-              alt="I love my pet"
-              class="h-12 w-auto object-contain"
-            />
-          </a>
-        </div>
+        <!-- LOGO -->
+        <a href="/" class="flex items-center">
+          <img
+            src="/logo-pets.PNG"
+            alt="I love my pet"
+            class="h-12 w-auto object-contain"
+          />
+        </a>
 
-        <!-- Navegación -->
+        <!-- Navegación Desktop (Visible solo en pantallas grandes) -->
         <nav
           class="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-dark"
         >
@@ -67,7 +66,7 @@ const { title } = Astro.props;
           >
         </nav>
 
-        <!-- Botón de agendar -->
+        <!-- Botón Agendar Cita (Desktop) -->
         <a
           href="/contacto"
           class="hidden md:flex items-center gap-2 bg-brand-teal text-white px-6 py-2.5 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg"
@@ -94,6 +93,66 @@ const { title } = Astro.props;
           >
           Agendar Cita
         </a>
+
+        <!-- Botón Hamburguesa (Visible solo en móvil) -->
+        <button
+          id="menu-btn"
+          class="md:hidden flex flex-col gap-1.5 p-2 focus:outline-none"
+        >
+          <span class="block w-6 h-0.5 bg-brand-dark rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-brand-dark rounded-full"></span>
+          <span class="block w-6 h-0.5 bg-brand-dark rounded-full"></span>
+        </button>
+      </div>
+
+      <!-- MENÚ MÓVIL (Sidebar oculto por defecto) -->
+      <div
+        id="mobile-menu"
+        class="fixed inset-0 z-50 hidden bg-white/95 backdrop-blur-md flex flex-col p-6 pt-24 md:hidden transition-all"
+      >
+        <!-- Botón de cerrar (X) -->
+        <button id="close-btn" class="absolute top-5 right-5 p-2">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="28"
+            height="28"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#1B2435"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><line x1="18" y1="6" x2="6" y2="18"></line><line
+              x1="6"
+              y1="6"
+              x2="18"
+              y2="18"></line></svg
+          >
+        </button>
+
+        <!-- Enlaces móviles -->
+        <nav
+          class="flex flex-col items-center gap-6 text-lg font-semibold text-brand-dark"
+        >
+          <a href="/" class="hover:text-brand-teal transition">Inicio</a>
+          <a href="/nosotros" class="hover:text-brand-teal transition"
+            >Nosotros</a
+          >
+          <a href="/servicios" class="hover:text-brand-teal transition"
+            >Servicios</a
+          >
+          <a href="/blog" class="hover:text-brand-teal transition">Blog</a>
+          <a href="/contacto" class="hover:text-brand-teal transition"
+            >Contacto</a
+          >
+          <!-- Botón Agendar Cita en móvil -->
+          <a
+            href="/contacto"
+            class="mt-6 bg-brand-teal text-white px-8 py-3 rounded-full font-semibold shadow-lg hover:bg-opacity-90 transition"
+          >
+            Agendar Cita
+          </a>
+        </nav>
       </div>
     </header>
 
@@ -256,5 +315,27 @@ const { title } = Astro.props;
         </div>
       </div>
     </footer>
+
+    <!-- Script para el menú móvil -->
+    <script>
+      const menuBtn = document.getElementById("menu-btn");
+      const closeBtn = document.getElementById("close-btn");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      if (menuBtn && closeBtn && mobileMenu) {
+        menuBtn.addEventListener("click", () => {
+          mobileMenu.classList.remove("hidden");
+        });
+        closeBtn.addEventListener("click", () => {
+          mobileMenu.classList.add("hidden");
+        });
+        // Cerrar al hacer clic en un enlace
+        mobileMenu.querySelectorAll("a").forEach((link) => {
+          link.addEventListener("click", () => {
+            mobileMenu.classList.add("hidden");
+          });
+        });
+      }
+    </script>
   </body>
 </html>

@@ -354,14 +354,16 @@ const popularPosts = [
               Recibe consejos y novedades exclusivas para el cuidado de tu
               mascota.
             </p>
-            <div class="flex gap-2">
+
+            <!-- FORMULARIO CORREGIDO -->
+            <div class="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 placeholder="Tu correo electrónico"
-                class="flex-1 px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:border-[#029EA1] text-[14px] bg-[#F8FAFB]"
+                class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#029EA1] text-[14px] bg-[#F8FAFB]"
               />
               <button
-                class="bg-[#029EA1] text-white px-5 py-2.5 rounded-xl font-medium text-[14px] hover:bg-opacity-90 transition shadow-md flex items-center gap-2 shrink-0"
+                class="bg-[#029EA1] text-white px-5 py-3 rounded-xl font-medium text-[14px] hover:bg-opacity-90 transition shadow-md flex items-center justify-center gap-2 shrink-0 whitespace-nowrap"
               >
                 <EnvelopeSimple size={16} weight="bold" />
                 Suscribirme
