@@ -1,0 +1,545 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  PawPrint,
+  Heart,
+  Calendar,
+  Phone,
+  MapPin,
+  EnvelopeSimple,
+  Stethoscope,
+  Tooth,
+  ShieldCheck,
+  Clock,
+  User,
+  ArrowRight,
+} from "@phosphor-icons/react";
+---
+
+<BaseLayout title="Servicios">
+  <!-- HERO SERVICIOS -->
+  <section
+    class="bg-white relative overflow-hidden pt-16 pb-10 lg:pt-20 lg:pb-16"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+      >
+        <!-- Columna Izquierda (Texto) -->
+        <div>
+          <div
+            class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-4"
+          >
+            NUESTROS SERVICIOS
+            <PawPrint size={16} color="#FC9F76" weight="bold" />
+          </div>
+          <h1
+            class="text-[2.6rem] sm:text-[3.2rem] lg:text-[3.8rem] font-semibold text-[#1B2435] leading-[1.1] mb-5 antialiased tracking-tight"
+          >
+            Todo lo que tu mascota <br /> necesita para vivir <br />
+            <span class="text-[#029EA1]">sana y feliz</span>
+          </h1>
+          <p class="text-[#4B5563] text-[16px] leading-relaxed max-w-lg">
+            En I Love My Pet ofrecemos atención veterinaria integral con amor,
+            profesionalismo y tecnología para cuidar cada etapa de la vida de tu
+            mejor amigo.
+          </p>
+        </div>
+
+        <!-- Columna Derecha (Imagen Perro/Gato) -->
+        <div class="relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <img
+            src="/hero-pets.png"
+            alt="Perro y gato felices"
+            class="w-full max-w-[550px] lg:max-w-[650px] h-auto object-contain transform lg:scale-105"
+          />
+          <div
+            class="absolute -bottom-4 -right-4 lg:-right-8 bg-[#029EA1] w-20 h-20 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20"
+          >
+            <PawPrint size={36} color="white" weight="bold" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTROS SERVICIOS VETERINARIOS (5 CARDS EN UNA SOLA LÍNEA) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <span
+          class="text-[#029EA1] font-bold text-[14px] tracking-wider uppercase"
+          >ATENCIÓN INTEGRAL</span
+        >
+        <PawPrint size={20} color="#FC9F76" weight="bold" />
+      </div>
+      <h2
+        class="text-[2.2rem] sm:text-[2.6rem] font-bold text-[#1B2435] tracking-tight text-center mb-10"
+      >
+        Nuestros Servicios Veterinarios
+      </h2>
+
+      <!-- Grid de 5 columnas (Una sola fila horizontal) -->
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-5"
+      >
+        <!-- Servicio 1 -->
+        <div
+          class="bg-white rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] flex flex-col items-center min-h-[260px]"
+        >
+          <div
+            class="w-16 h-16 bg-[#D6EDEF]/40 rounded-full flex items-center justify-center mb-4 text-[#029EA1]"
+          >
+            <Stethoscope size={32} color="#029EA1" weight="bold" />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[17px] mb-1">
+            Consulta General
+          </h3>
+          <p
+            class="text-[#6B7280] text-[14px] font-medium leading-relaxed mb-4 flex-grow"
+          >
+            Revisiones completas para mantener a tu mascota sana y prevenir
+            enfermedades.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center gap-1 border border-gray-200 rounded-full px-5 py-1.5 text-[#029EA1] font-medium text-[12px] hover:bg-[#029EA1] hover:text-white transition"
+          >
+            Más información <ArrowRight size={14} weight="bold" />
+          </a>
+        </div>
+
+        <!-- Servicio 2 -->
+        <div
+          class="bg-white rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] flex flex-col items-center min-h-[260px]"
+        >
+          <div
+            class="w-16 h-16 bg-[#D6EDEF]/40 rounded-full flex items-center justify-center mb-4 text-[#029EA1]"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              color="#029EA1"
+              ><path d="m18 2 4 4"></path><path d="m17 7 2-2"></path><path
+                d="m14 10 6-6"></path><path d="m8 14-4 4"></path><path
+                d="m12 10-4 4"></path><path d="M4 18v4h4"></path><path
+                d="M14 4h-4a4 4 0 0 0-4 4v4"></path></svg
+            >
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[17px] mb-1">Vacunación</h3>
+          <p
+            class="text-[#6B7280] text-[14px] font-medium leading-relaxed mb-4 flex-grow"
+          >
+            Protocolos de vacunación seguros y efectivos, adaptados a cada
+            etapa.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center gap-1 border border-gray-200 rounded-full px-5 py-1.5 text-[#029EA1] font-medium text-[12px] hover:bg-[#029EA1] hover:text-white transition"
+          >
+            Más información <ArrowRight size={14} weight="bold" />
+          </a>
+        </div>
+
+        <!-- Servicio 3 -->
+        <div
+          class="bg-white rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] flex flex-col items-center min-h-[260px]"
+        >
+          <div
+            class="w-16 h-16 bg-[#D6EDEF]/40 rounded-full flex items-center justify-center mb-4 text-[#029EA1]"
+          >
+            <PawPrint size={32} color="#029EA1" weight="bold" />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[17px] mb-1">Cirugía</h3>
+          <p
+            class="text-[#6B7280] text-[14px] font-medium leading-relaxed mb-4 flex-grow"
+          >
+            Procedimientos seguros con equipos modernos y monitoreo constante.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center gap-1 border border-gray-200 rounded-full px-5 py-1.5 text-[#029EA1] font-medium text-[12px] hover:bg-[#029EA1] hover:text-white transition"
+          >
+            Más información <ArrowRight size={14} weight="bold" />
+          </a>
+        </div>
+
+        <!-- Servicio 4 -->
+        <div
+          class="bg-white rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] flex flex-col items-center min-h-[260px]"
+        >
+          <div
+            class="w-16 h-16 bg-[#D6EDEF]/40 rounded-full flex items-center justify-center mb-4 text-[#029EA1]"
+          >
+            <Tooth size={32} color="#029EA1" weight="bold" />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[17px] mb-1">Odontología</h3>
+          <p
+            class="text-[#6B7280] text-[14px] font-medium leading-relaxed mb-4 flex-grow"
+          >
+            Cuidado dental para una vida más saludable y sin dolor.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center gap-1 border border-gray-200 rounded-full px-5 py-1.5 text-[#029EA1] font-medium text-[12px] hover:bg-[#029EA1] hover:text-white transition"
+          >
+            Más información <ArrowRight size={14} weight="bold" />
+          </a>
+        </div>
+
+        <!-- Servicio 5 -->
+        <div
+          class="bg-white rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] flex flex-col items-center min-h-[260px]"
+        >
+          <div
+            class="w-16 h-16 bg-[#D6EDEF]/40 rounded-full flex items-center justify-center mb-4 text-[#029EA1]"
+          >
+            <Heart size={32} color="#029EA1" weight="bold" />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[17px] mb-1">Emergencias</h3>
+          <p
+            class="text-[#6B7280] text-[14px] font-medium leading-relaxed mb-4 flex-grow"
+          >
+            Atención de emergencias veterinarias 24/7 cuando más nos necesites.
+          </p>
+          <a
+            href="/contacto"
+            class="inline-flex items-center justify-center gap-1 border border-gray-200 rounded-full px-5 py-1.5 text-[#029EA1] font-medium text-[12px] hover:bg-[#029EA1] hover:text-white transition"
+          >
+            Más información <ArrowRight size={14} weight="bold" />
+          </a>
+        </div>
+      </div>
+
+      <!-- BOTÓN INFERIOR -->
+      <div class="text-center mt-10">
+        <a
+          href="/servicios"
+          class="inline-flex items-center gap-1.5 bg-[#029EA1] text-white px-8 py-3 rounded-full font-medium text-[15px] hover:bg-opacity-90 transition shadow-md"
+        >
+          Ver todos los servicios
+          <span class="text-lg font-bold leading-none">›</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ¿POR QUÉ ELEGIRNOS? (Diseño de una sola fila: Texto + 4 Ítems) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-[#F3F6F8] rounded-3xl p-8 md:p-10 border border-gray-200">
+        <!-- Contenedor principal: En pantalla grande, todo en una sola fila (grid-cols-5) -->
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-4 items-start">
+          <!-- Columna Izquierda (Ocupa 2 de 5 espacios) -->
+          <div class="lg:col-span-2 flex flex-col justify-center">
+            <div
+              class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-2"
+            >
+              ¿POR QUÉ ELEGIRNOS?
+            </div>
+            <h2
+              class="text-[2rem] sm:text-[2.4rem] font-bold text-[#1B2435] leading-tight mb-2"
+            >
+              Cuidado de calidad <br /> para quienes <span
+                class="text-[#029EA1]">amas</span
+              >
+            </h2>
+            <p class="text-[#4B5563] text-[15px] leading-relaxed">
+              Nos esforzamos cada día por brindar un servicio excepcional con
+              empatía, ética y compromiso.
+            </p>
+          </div>
+
+          <!-- Columna Derecha (Ítems más delgados, ocupan 3 de 5 espacios) -->
+          <div
+            class="lg:col-span-3 grid grid-cols-2 sm:grid-cols-4 gap-4 lg:gap-3 items-start pt-4 lg:pt-0 border-t lg:border-t-0 border-gray-200/50"
+          >
+            <!-- Ítem 1 -->
+            <div class="flex flex-col items-start gap-1.5">
+              <ShieldCheck size={28} color="#029EA1" weight="bold" />
+              <h4 class="font-bold text-[#1B2435] text-[15px] leading-tight">
+                Profesionales certificados
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Médicos veterinarios altamente capacitados y en constante
+                actualización.
+              </p>
+            </div>
+
+            <!-- Ítem 2 -->
+            <div class="flex flex-col items-start gap-1.5">
+              <Heart size={28} color="#029EA1" weight="bold" />
+              <h4 class="font-bold text-[#1B2435] text-[15px] leading-tight">
+                Atención personalizada
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Cada mascota es única, por eso diseñamos planes de atención
+                individualizados.
+              </p>
+            </div>
+
+            <!-- Ítem 3 -->
+            <div class="flex flex-col items-start gap-1.5">
+              <Clock size={28} color="#029EA1" weight="bold" />
+              <h4 class="font-bold text-[#1B2435] text-[15px] leading-tight">
+                Tecnología moderna
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Contamos con equipos de diagnóstico y tratamiento de última
+                generación.
+              </p>
+            </div>
+
+            <!-- Ítem 4 -->
+            <div class="flex flex-col items-start gap-1.5">
+              <User size={28} color="#029EA1" weight="bold" />
+              <h4 class="font-bold text-[#1B2435] text-[15px] leading-tight">
+                Amor por los animales
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Tratamos a tu mascota como parte de nuestra familia, con cariño
+                y respeto.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRO PROCESO (5 PASOS CON NÚMEROS TEAL SÓLIDOS) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-center gap-2 mb-2">
+        <span
+          class="text-[#029EA1] font-bold text-[14px] tracking-wider uppercase"
+          >NUESTRO PROCESO</span
+        >
+        <PawPrint size={20} color="#FC9F76" weight="bold" />
+      </div>
+      <h2
+        class="text-[2.2rem] sm:text-[2.6rem] font-bold text-[#1B2435] tracking-tight text-center mb-12"
+      >
+        Así cuidamos a tu mascota
+      </h2>
+
+      <div class="relative">
+        <div
+          class="hidden lg:block absolute top-[3.5rem] left-24 right-24 h-[2px] border-t-2 border-dashed border-[#029EA1]/30 z-0"
+        >
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 relative z-10"
+        >
+          <!-- Paso 1 -->
+          <div class="flex flex-col items-center text-center gap-2">
+            <div
+              class="w-14 h-14 rounded-full bg-[#029EA1] flex items-center justify-center text-white shadow-md relative z-10"
+            >
+              <Calendar size={24} weight="bold" />
+            </div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#029EA1] text-white flex items-center justify-center text-sm font-bold -mt-1"
+            >
+              1
+            </div>
+            <h4 class="font-bold text-[#1B2435] text-[17px] mt-1">
+              Agenda tu cita
+            </h4>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed max-w-[180px]">
+              Elige el día y la hora que mejor te convenga.
+            </p>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="flex flex-col items-center text-center gap-2">
+            <div
+              class="w-14 h-14 rounded-full bg-[#029EA1] flex items-center justify-center text-white shadow-md relative z-10"
+            >
+              <Stethoscope size={24} weight="bold" />
+            </div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#029EA1] text-white flex items-center justify-center text-sm font-bold -mt-1"
+            >
+              2
+            </div>
+            <h4 class="font-bold text-[#1B2435] text-[17px] mt-1">Evaluamos</h4>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed max-w-[180px]">
+              Realizamos una revisión completa.
+            </p>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="flex flex-col items-center text-center gap-2">
+            <div
+              class="w-14 h-14 rounded-full bg-[#029EA1] flex items-center justify-center text-white shadow-md relative z-10"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path d="M3 3h18v18H3z"></path><path d="M9 9h6v6H9z"
+                ></path></svg
+              >
+            </div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#029EA1] text-white flex items-center justify-center text-sm font-bold -mt-1"
+            >
+              3
+            </div>
+            <h4 class="font-bold text-[#1B2435] text-[17px] mt-1">
+              Diagnóstico
+            </h4>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed max-w-[180px]">
+              Determinamos el tratamiento adecuado.
+            </p>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="flex flex-col items-center text-center gap-2">
+            <div
+              class="w-14 h-14 rounded-full bg-[#029EA1] flex items-center justify-center text-white shadow-md relative z-10"
+            >
+              <Heart size={24} weight="bold" />
+            </div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#029EA1] text-white flex items-center justify-center text-sm font-bold -mt-1"
+            >
+              4
+            </div>
+            <h4 class="font-bold text-[#1B2435] text-[17px] mt-1">
+              Tratamiento
+            </h4>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed max-w-[180px]">
+              Aplicamos el tratamiento con cuidado.
+            </p>
+          </div>
+
+          <!-- Paso 5 -->
+          <div class="flex flex-col items-center text-center gap-2">
+            <div
+              class="w-14 h-14 rounded-full bg-[#029EA1] flex items-center justify-center text-white shadow-md relative z-10"
+            >
+              <PawPrint size={24} weight="bold" />
+            </div>
+            <div
+              class="w-6 h-6 rounded-full bg-[#029EA1] text-white flex items-center justify-center text-sm font-bold -mt-1"
+            >
+              5
+            </div>
+            <h4 class="font-bold text-[#1B2435] text-[17px] mt-1">
+              Seguimiento
+            </h4>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed max-w-[180px]">
+              Monitoreamos su evolución.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL (Imagen PEGADA al borde inferior absoluto) -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Quitamos el padding inferior (pb-0) en el contenedor de la derecha -->
+      <div
+        class="bg-[#029EA1] rounded-3xl flex flex-col md:flex-row gap-6 overflow-hidden relative"
+      >
+        <!-- Columna Izquierda (Texto) con padding completo -->
+        <div class="flex-1 z-10 text-white max-w-lg p-8 md:pl-10 md:py-10">
+          <div
+            class="flex items-center gap-2 text-white font-bold text-[11px] uppercase tracking-wider mb-2"
+          >
+            ¿LISTO PARA CUIDAR A TU MEJOR AMIGO?
+          </div>
+          <h3
+            class="text-[1.8rem] sm:text-[2.2rem] lg:text-[2.6rem] font-bold leading-tight whitespace-nowrap mb-1"
+          >
+            Agenda una cita hoy mismo <Heart
+              size={22}
+              color="white"
+              class="inline ml-2"
+              weight="regular"
+            />
+          </h3>
+          <p class="text-white/90 text-[14px] leading-relaxed mb-6">
+            Estamos aquí para brindarle el cuidado que se merece. <br /> Tu mascota
+            te lo agradecerá.
+          </p>
+
+          <div class="flex flex-wrap gap-3">
+            <a
+              href="/contacto"
+              class="flex items-center gap-2 bg-white text-[#029EA1] px-6 py-2.5 rounded-full font-bold hover:bg-opacity-90 transition shadow-md text-[14px]"
+            >
+              <Calendar size={16} color="#029EA1" weight="bold" />
+              Agendar Cita
+            </a>
+            <a
+              href="https://wa.me/50585005678"
+              target="_blank"
+              class="flex items-center gap-2 bg-white/10 backdrop-blur-sm text-white border border-white/30 px-6 py-2.5 rounded-full font-bold hover:bg-white/20 transition text-[14px]"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                ><path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+                ></path></svg
+              >
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <!-- Columna Derecha (Sin padding abajo, la imagen toca el suelo) -->
+        <div
+          class="flex-1 w-full relative z-10 flex justify-end items-end h-full"
+        >
+          <!-- Decoraciones flotantes -->
+          <div class="absolute top-4 right-1/2 md:right-20 text-brand-orange">
+            <Heart size={28} color="#FC9F76" weight="regular" />
+          </div>
+          <div class="absolute top-8 right-12 md:right-28 text-white/60">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="3"
+              stroke-linecap="round"
+              ><path d="M12 4v8"></path><path d="M12 12v8"></path><path
+                d="M4 12h8"></path><path d="M12 12h8"></path></svg
+            >
+          </div>
+
+          <!-- Imagen anclada al fondo y creciendo hacia arriba -->
+          <img
+            src="/cta-pets.png"
+            alt="Perro y gato felices"
+            class="w-[120%] sm:w-[100%] md:w-[110%] max-w-[550px] h-full object-cover object-bottom rounded-l-3xl md:rounded-l-none scale-110 md:scale-105 origin-bottom-right"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

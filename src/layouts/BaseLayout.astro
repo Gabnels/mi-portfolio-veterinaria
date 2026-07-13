@@ -1,0 +1,266 @@
+---
+import "../styles/global.css";
+
+// IMPORTAMOS LOS ICONOS DE PHOSPHOR PARA EL FOOTER
+import {
+  Phone,
+  MapPin,
+  EnvelopeSimple,
+  WhatsappLogo,
+  FacebookLogo,
+  InstagramLogo,
+  PawPrint,
+} from "@phosphor-icons/react";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title} | I love my pet</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-brand-white text-brand-dark font-['Poppins'] antialiased">
+    <!-- AQUÍ IRÁ EL HEADER (lo crearemos después) -->
+    <header
+      class="bg-white shadow-sm sticky top-0 z-50 border-b border-brand-cream"
+    >
+      <div
+        class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-2">
+          <!-- Logo de texto (usaremos esto hasta que tengas el logo real) -->
+          <span class="text-2xl font-extrabold text-brand-dark"
+            >I love<span class="text-brand-teal"> my pet</span></span
+          >
+        </div>
+
+        <!-- Navegación -->
+        <nav
+          class="hidden md:flex items-center gap-8 text-sm font-semibold text-brand-dark"
+        >
+          <a href="/" class="hover:text-brand-teal transition">Inicio</a>
+          <a href="/nosotros" class="hover:text-brand-teal transition"
+            >Nosotros</a
+          >
+          <a href="/servicios" class="hover:text-brand-teal transition"
+            >Servicios</a
+          >
+          <a href="/blog" class="hover:text-brand-teal transition">Blog</a>
+          <a href="/contacto" class="hover:text-brand-teal transition"
+            >Contacto</a
+          >
+        </nav>
+
+        <!-- Botón de agendar -->
+        <a
+          href="/contacto"
+          class="hidden md:flex items-center gap-2 bg-brand-teal text-white px-6 py-2.5 rounded-full font-semibold hover:bg-opacity-90 transition shadow-lg"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><rect width="18" height="18" x="3" y="4" rx="2" ry="2"></rect><line
+              x1="16"
+              x2="16"
+              y1="2"
+              y2="6"></line><line x1="8" x2="8" y1="2" y2="6"></line><line
+              x1="3"
+              x2="21"
+              y1="10"
+              y2="10"></line></svg
+          >
+          Agendar Cita
+        </a>
+      </div>
+    </header>
+
+    <!-- EL CONTENIDO DE CADA PÁGINA SE CARGARÁ AQUÍ -->
+    <main>
+      <slot />
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-[#029EA1] text-white pt-14 pb-10">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-10"
+        >
+          <!-- Col 1: Logo y descripción -->
+          <div class="col-span-1 lg:col-span-1">
+            <!-- Logo con el corazón dentro de love -->
+            <div class="text-2xl font-bold text-white leading-tight mb-4">
+              I <span class="text-[#1B2435] text-2xl">🩵</span>ve<br />
+              <span class="text-[#1B2435] text-2xl">my</span> pet
+            </div>
+            <!-- CAMBIO 1: Texto más grande y con peso medio -->
+            <p
+              class="text-white/80 text-[15px] font-medium leading-relaxed max-w-[240px]"
+            >
+              Clínica veterinaria y tienda para mascotas en Managua, Nicaragua.
+              Cuidamos a tu mejor amigo como si fuera parte de nuestra familia.
+            </p>
+            <!-- Redes Sociales -->
+            <div class="flex gap-3 mt-6">
+              <!-- Facebook -->
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
+              >
+                <FacebookLogo size={18} color="#029EA1" weight="bold" />
+              </a>
+              <!-- Instagram -->
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
+              >
+                <InstagramLogo size={18} color="#029EA1" weight="bold" />
+              </a>
+              <!-- WhatsApp -->
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
+              >
+                <WhatsappLogo size={18} color="#029EA1" weight="bold" />
+              </a>
+              <!-- TikTok -->
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-white flex items-center justify-center hover:bg-opacity-90 transition"
+              >
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#029EA1"
+                  ><path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.16c0 2.52-1.12 4.84-3.08 6.22-1.69 1.18-3.89 1.54-5.91.95-2.09-.61-3.89-2.12-4.73-4.15-.74-1.77-.69-3.83.19-5.54.85-1.66 2.46-2.95 4.29-3.35v4.15c-.65.17-1.28.45-1.79.88-.82.68-1.26 1.74-1.08 2.79.17 1.05.9 1.97 1.88 2.47 1.23.63 2.77.47 3.83-.36.96-.75 1.53-1.93 1.49-3.15l-.02-12.3z"
+                  ></path></svg
+                >
+              </a>
+            </div>
+          </div>
+
+          <!-- Col 2: Enlaces -->
+          <div>
+            <h4 class="font-bold text-white text-[17px] mb-5">Enlaces</h4>
+            <!-- CAMBIO 2: Texto más grande y con peso medio -->
+            <ul class="space-y-2.5 text-[15px] font-medium text-white/80">
+              <li>
+                <a href="/" class="hover:text-white transition">Inicio</a>
+              </li>
+              <li>
+                <a href="/nosotros" class="hover:text-white transition"
+                  >Nosotros</a
+                >
+              </li>
+              <li>
+                <a href="/servicios" class="hover:text-white transition"
+                  >Servicios</a
+                >
+              </li>
+              <li>
+                <a href="/blog" class="hover:text-white transition">Blog</a>
+              </li>
+              <li>
+                <a href="/contacto" class="hover:text-white transition"
+                  >Contacto</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Servicios -->
+          <div>
+            <h4 class="font-bold text-white text-[17px] mb-5">Servicios</h4>
+            <!-- CAMBIO 3: Texto más grande y con peso medio -->
+            <ul class="space-y-2.5 text-[15px] font-medium text-white/80">
+              <li>
+                <a href="/servicios" class="hover:text-white transition"
+                  >Consulta General</a
+                >
+              </li>
+              <li>
+                <a href="/servicios" class="hover:text-white transition"
+                  >Vacunación</a
+                >
+              </li>
+              <li>
+                <a href="/servicios" class="hover:text-white transition"
+                  >Cirugía</a
+                >
+              </li>
+              <li>
+                <a href="/servicios" class="hover:text-white transition"
+                  >Odontología</a
+                >
+              </li>
+              <li>
+                <a href="/servicios" class="hover:text-white transition"
+                  >Emergencias</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contacto -->
+          <div>
+            <h4 class="font-bold text-white text-[17px] mb-5">Contacto</h4>
+            <!-- CAMBIO 4: Texto más grande y con peso medio -->
+            <ul class="space-y-3 text-[15px] font-medium">
+              <!-- Teléfono Fijo -->
+              <li class="flex items-center gap-3 text-white/90">
+                <Phone size={18} color="white" weight="bold" />
+                <span>8888 1234</span>
+              </li>
+              <!-- WhatsApp -->
+              <li class="flex items-center gap-3 text-white/90">
+                <WhatsappLogo size={18} color="white" weight="fill" />
+                <span>8500 5678</span>
+              </li>
+              <!-- Email -->
+              <li class="flex items-center gap-3 text-white/90">
+                <EnvelopeSimple size={18} color="white" weight="fill" />
+                <span>info@ilovemypet.com.ni</span>
+              </li>
+              <!-- Ubicación -->
+              <li class="flex items-center gap-3 text-white/90">
+                <MapPin size={18} color="white" weight="fill" />
+                <span>Managua, Nicaragua</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Línea divisoria + Copyright + Huella decorativa -->
+        <div
+          class="border-t border-white/20 pt-6 flex flex-col sm:flex-row items-center justify-between text-[13px] text-white/70"
+        >
+          <span>© 2024 I Love My Pet. Todos los derechos reservados.</span>
+          <!-- Huella blanca a la derecha -->
+          <PawPrint
+            size={22}
+            color="white"
+            weight="bold"
+            class="mt-4 sm:mt-0"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

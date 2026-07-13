@@ -1,0 +1,416 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  PawPrint,
+  Heart,
+  Calendar,
+  MapPin,
+  MagnifyingGlass,
+  CaretRight,
+  ArrowRight,
+  EnvelopeSimple,
+} from "@phosphor-icons/react";
+
+// ----------------------------------------------------------------
+// DATOS DE EJEMPLO (MOCK DATA) - Artículos 100% reales y con imágenes estables
+// ----------------------------------------------------------------
+const posts = [
+  {
+    id: 1,
+    title: "10 señales de que tu mascota necesita atención veterinaria",
+    excerpt:
+      "Detectar a tiempo puede hacer la diferencia en su salud y bienestar. Conoce las señales más comunes.",
+    category: "Cuidado General",
+    date: "18 de mayo, 2024",
+    author: "Dra. Ana Gutiérrez",
+    image: "/hero-pets.png",
+  },
+  {
+    id: 2,
+    title: "Alimentación adecuada para cada etapa de tu mascota",
+    excerpt:
+      "Una buena nutrición es clave para su desarrollo y calidad de vida. Te contamos qué debe comer en cada etapa.",
+    category: "Nutrición",
+    date: "10 de mayo, 2024",
+    author: "Dr. Carlos Mendoza",
+    image: "/cta-pets.png",
+  },
+  {
+    id: 3,
+    title: "Salud dental en perros y gatos: ¿por qué es tan importante?",
+    excerpt:
+      "El cuidado dental previene enfermedades y mejora su calidad de vida. Aprende cómo mantener su boca sana.",
+    category: "Salud Dental",
+    date: "5 de mayo, 2024",
+    author: "Dra. Mariana López",
+    image:
+      "https://images.unsplash.com/photo-1573865526739-10659fec78a5?w=600&h=400&fit=crop",
+  },
+  {
+    id: 4,
+    title: "Cómo reducir el estrés en gatos: consejos prácticos",
+    excerpt:
+      "Los gatos también pueden estresarse. Descubre cómo crear un ambiente tranquilo y feliz para él.",
+    category: "Bienestar",
+    date: "30 de abril, 2024",
+    author: "Dr. Luis Rojas",
+    image:
+      "https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?w=600&h=400&fit=crop",
+  },
+];
+
+// Datos para el sidebar (Categorías) - ¡ESTA ES LA VARIABLE QUE FALTABA!
+const categories = [
+  { name: "Cuidado General", count: 12 },
+  { name: "Nutrición", count: 8 },
+  { name: "Salud", count: 10 },
+  { name: "Bienestar", count: 7 },
+  { name: "Emergencias", count: 4 },
+];
+
+// Datos para Artículos Populares
+const popularPosts = [
+  {
+    id: 1,
+    title: "¿Cuál es la mejor edad para vacunar a mi mascota?",
+    date: "12 de abril, 2024",
+    image:
+      "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?w=100&h=100&fit=crop",
+  },
+  {
+    id: 2,
+    title: "Parásitos en mascotas: cómo prevenirlos",
+    date: "5 de abril, 2024",
+    image:
+      "https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=100&h=100&fit=crop",
+  },
+  {
+    id: 3,
+    title: "Beneficios de la esterilización en perros y gatos",
+    date: "2 de abril, 2024",
+    image:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop",
+  },
+];
+---
+
+<BaseLayout title="Blog">
+  <!-- HERO BLOG -->
+  <section
+    class="bg-white relative overflow-hidden pt-16 pb-10 lg:pt-20 lg:pb-16"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+      >
+        <div>
+          <div
+            class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-4"
+          >
+            NUESTRO BLOG
+            <PawPrint size={16} color="#FC9F76" weight="bold" />
+          </div>
+          <h1
+            class="text-[2.6rem] sm:text-[3.2rem] lg:text-[3.8rem] font-semibold text-[#1B2435] leading-[1.1] mb-5 antialiased tracking-tight"
+          >
+            Consejos, cuidados y <br /> novedades para tu <span
+              class="text-[#029EA1]">mejor amigo</span
+            >
+          </h1>
+          <p class="text-[#4B5563] text-[16px] leading-relaxed max-w-lg">
+            En nuestro blog encontrarás información útil para cuidar a tu
+            mascota, mantenerla saludable y fortalecer ese vínculo único que los
+            une.
+          </p>
+        </div>
+
+        <div class="relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <img
+            src="/hero-pets.png"
+            alt="Perro y gato felices"
+            class="w-full max-w-[550px] lg:max-w-[650px] h-auto object-contain transform lg:scale-105"
+          />
+          <div
+            class="absolute -bottom-4 -right-4 lg:-right-8 bg-[#029EA1] w-20 h-20 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20"
+          >
+            <PawPrint size={36} color="white" weight="bold" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTENIDO PRINCIPAL (GRID) -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+        <!-- COLUMNA IZQUIERDA (Artículos Recientes) -->
+        <div class="lg:col-span-2 space-y-10">
+          <h2 class="text-[1.8rem] font-bold text-[#1B2435] mb-6">
+            Artículos recientes
+          </h2>
+
+          <!-- Recorremos los artículos con un bucle (escalable) -->
+          {
+            posts.map((post) => (
+              <article class="flex flex-col sm:flex-row gap-6 pb-8 border-b border-gray-100 group">
+                <div class="sm:w-1/3 relative">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    class="w-full h-48 sm:h-40 object-cover rounded-2xl shadow-sm group-hover:shadow-md transition"
+                  />
+                  <div class="absolute top-3 left-3 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-[10px] font-bold text-[#029EA1] shadow-sm">
+                    {post.category}
+                  </div>
+                </div>
+                <div class="sm:w-2/3 flex flex-col justify-between">
+                  <div>
+                    <h3 class="font-bold text-[#1B2435] text-[20px] leading-tight mb-2 group-hover:text-[#029EA1] transition">
+                      {post.title}
+                    </h3>
+                    <p class="text-[#6B7280] text-[14px] leading-relaxed mb-3">
+                      {post.excerpt}
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-between pt-2 border-t border-gray-50">
+                    <div class="flex items-center gap-2">
+                      <div class="w-8 h-8 rounded-full bg-[#D6EDEF] overflow-hidden">
+                        <img
+                          src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50&h=50&fit=crop"
+                          class="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p class="text-[12px] font-bold text-[#1B2435]">
+                          {post.author}
+                        </p>
+                        <p class="text-[10px] text-[#9CA3AF]">{post.date}</p>
+                      </div>
+                    </div>
+                    <a
+                      href={`/blog/${post.id}`}
+                      class="flex items-center gap-1 text-[#029EA1] font-medium text-[14px] hover:underline"
+                    >
+                      Leer más <ArrowRight size={16} weight="bold" />
+                    </a>
+                  </div>
+                </div>
+              </article>
+            ))
+          }
+
+          <!-- Paginación (Ficticia para el diseño) -->
+          <div class="flex items-center justify-start gap-2 mt-4">
+            <div
+              class="w-8 h-8 rounded bg-[#029EA1] text-white flex items-center justify-center font-bold text-sm cursor-pointer"
+            >
+              1
+            </div>
+            <div
+              class="w-8 h-8 rounded bg-[#F8FAFB] text-[#1B2435] flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-gray-200 transition"
+            >
+              2
+            </div>
+            <div
+              class="w-8 h-8 rounded bg-[#F8FAFB] text-[#1B2435] flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-gray-200 transition"
+            >
+              3
+            </div>
+            <span class="text-[#9CA3AF] px-1">...</span>
+            <div
+              class="w-8 h-8 rounded bg-[#F8FAFB] text-[#1B2435] flex items-center justify-center font-bold text-sm cursor-pointer hover:bg-gray-200 transition"
+            >
+              8
+            </div>
+            <div
+              class="flex items-center gap-1 bg-[#F8FAFB] px-3 py-1.5 rounded-full text-[#1B2435] text-sm font-medium cursor-pointer hover:bg-gray-200 transition ml-2"
+            >
+              Siguiente <ArrowRight size={14} weight="bold" />
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA DERECHA (Sidebar) -->
+        <div class="space-y-8">
+          <!-- Buscador -->
+          <div
+            class="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+          >
+            <h4 class="font-bold text-[#1B2435] text-[17px] mb-4">
+              Buscar en el blog
+            </h4>
+            <div class="relative">
+              <input
+                type="text"
+                placeholder="Buscar artículos..."
+                class="w-full pl-4 pr-10 py-3 border border-gray-200 rounded-xl focus:outline-none focus:border-[#029EA1] text-[14px] bg-[#F8FAFB]"
+              />
+              <MagnifyingGlass
+                size={20}
+                color="#9CA3AF"
+                class="absolute right-3 top-1/2 -translate-y-1/2"
+              />
+            </div>
+          </div>
+
+          <!-- Categorías -->
+          <div
+            class="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+          >
+            <h4 class="font-bold text-[#1B2435] text-[17px] mb-4">
+              Categorías
+            </h4>
+            <ul class="space-y-3">
+              {
+                categories.map((cat) => (
+                  <li class="flex items-center justify-between text-[14px] text-[#6B7280] hover:text-[#029EA1] transition cursor-pointer group">
+                    <div class="flex items-center gap-2">
+                      <PawPrint size={14} color="#029EA1" weight="bold" />
+                      <span class="group-hover:font-medium">{cat.name}</span>
+                    </div>
+                    <span class="text-[12px] bg-[#F8FAFB] px-2 py-0.5 rounded-full group-hover:bg-[#029EA1] group-hover:text-white transition">
+                      {cat.count}
+                    </span>
+                  </li>
+                ))
+              }
+            </ul>
+            <a
+              href="#"
+              class="flex items-center gap-1 text-[#029EA1] font-medium text-[14px] mt-4 hover:underline"
+            >
+              Ver todas las categorías <ArrowRight size={14} weight="bold" />
+            </a>
+          </div>
+
+          <!-- Artículos populares -->
+          <div
+            class="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+          >
+            <h4 class="font-bold text-[#1B2435] text-[17px] mb-4">
+              Artículos populares
+            </h4>
+            <div class="space-y-4">
+              {
+                popularPosts.map((pop, index) => (
+                  <div class="flex items-center gap-4 group cursor-pointer">
+                    <div class="w-10 h-10 rounded-full bg-[#F8FAFB] flex items-center justify-center text-[#1B2435] font-bold text-sm group-hover:bg-[#029EA1] group-hover:text-white transition shrink-0">
+                      {index + 1}
+                    </div>
+                    <img
+                      src={pop.image}
+                      class="w-12 h-12 rounded-full object-cover border border-gray-100 shrink-0"
+                    />
+                    <div class="flex-1">
+                      <p class="font-medium text-[#1B2435] text-[14px] leading-tight group-hover:text-[#029EA1] transition">
+                        {pop.title}
+                      </p>
+                      <p class="text-[#9CA3AF] text-[11px]">{pop.date}</p>
+                    </div>
+                  </div>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- CTA Sidebar -->
+          <div
+            class="bg-[#F3F6F8] rounded-2xl p-6 border border-gray-200 relative overflow-hidden"
+          >
+            <h4 class="font-bold text-[#1B2435] text-[17px] mb-2">
+              ¿Tienes dudas?
+            </h4>
+            <p class="text-[#6B7280] text-[14px] leading-relaxed mb-4">
+              Nuestro equipo está listo para ayudarte con lo que tu mascota
+              necesite.
+            </p>
+            <div class="flex flex-col gap-2">
+              <a
+                href="/contacto"
+                class="flex items-center justify-center gap-2 bg-[#029EA1] text-white py-2.5 rounded-full font-medium text-[14px] hover:bg-opacity-90 transition shadow-md"
+              >
+                <Calendar size={16} weight="bold" />
+                Agendar una cita
+              </a>
+              <a
+                href="https://wa.me/50585005678"
+                target="_blank"
+                class="flex items-center justify-center gap-2 border border-[#029EA1] text-[#029EA1] py-2.5 rounded-full font-medium text-[14px] hover:bg-[#029EA1] hover:text-white transition"
+              >
+                Escríbenos por WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <!-- Newsletter -->
+          <div
+            class="bg-white rounded-2xl border border-gray-200 p-6 shadow-[0_4px_20px_rgba(0,0,0,0.02)]"
+          >
+            <h4 class="font-bold text-[#1B2435] text-[17px] mb-1">
+              Suscríbete a nuestro blog
+            </h4>
+            <p class="text-[#6B7280] text-[13px] leading-relaxed mb-4">
+              Recibe consejos y novedades exclusivas para el cuidado de tu
+              mascota.
+            </p>
+            <div class="flex gap-2">
+              <input
+                type="email"
+                placeholder="Tu correo electrónico"
+                class="flex-1 px-3 py-2.5 border border-gray-200 rounded-xl focus:outline-none focus:border-[#029EA1] text-[14px] bg-[#F8FAFB]"
+              />
+              <button
+                class="bg-[#029EA1] text-white px-5 py-2.5 rounded-xl font-medium text-[14px] hover:bg-opacity-90 transition shadow-md flex items-center gap-2 shrink-0"
+              >
+                <EnvelopeSimple size={16} weight="bold" />
+                Suscribirme
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL (Banner inferior) -->
+  <section class="pb-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-[#F3F6F8] rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-6 items-center justify-between border border-gray-200 relative overflow-hidden"
+      >
+        <div class="flex items-center gap-4 flex-1">
+          <div
+            class="w-14 h-14 bg-white rounded-full flex items-center justify-center text-[#029EA1] shadow-md shrink-0"
+          >
+            <PawPrint size={28} color="#029EA1" weight="bold" />
+          </div>
+          <div>
+            <h3 class="text-[1.5rem] font-bold text-[#1B2435] leading-tight">
+              ¿Listo para darle el mejor cuidado <br /> a tu mejor amigo?
+            </h3>
+            <p class="text-[#6B7280] text-[14px] mt-1">
+              Agenda una cita hoy y permítenos cuidar de su salud y bienestar.
+            </p>
+          </div>
+        </div>
+
+        <div class="shrink-0">
+          <a
+            href="/contacto"
+            class="flex items-center gap-2 bg-[#029EA1] text-white px-7 py-3 rounded-full font-bold hover:bg-opacity-90 transition shadow-md text-[15px]"
+          >
+            <Calendar size={18} weight="bold" />
+            Agendar Cita
+          </a>
+        </div>
+
+        <!-- Decoración -->
+        <div
+          class="absolute -right-10 -bottom-10 w-40 h-40 rounded-full bg-white/20"
+        >
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

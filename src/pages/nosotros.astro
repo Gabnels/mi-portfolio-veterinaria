@@ -1,0 +1,355 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  PawPrint,
+  Heart,
+  Phone,
+  MapPin,
+  EnvelopeSimple,
+  FacebookLogo,
+  InstagramLogo,
+  Cross,
+} from "@phosphor-icons/react";
+---
+
+<BaseLayout title="Nosotros">
+  <!-- HERO NOSOTROS -->
+  <section
+    class="bg-white relative overflow-hidden pt-16 pb-10 lg:pt-20 lg:pb-16"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+      >
+        <!-- Columna Izquierda (Texto) -->
+        <div>
+          <!-- CORREGIDO: Color teal, mayúsculas y más peso -->
+          <div
+            class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-4"
+          >
+            SOBRE NOSOTROS
+            <Heart size={16} color="#FC9F76" weight="regular" />
+          </div>
+          <h1
+            class="text-[2.6rem] sm:text-[3.2rem] lg:text-[3.8rem] font-semibold text-[#1B2435] leading-[1.1] mb-5 antialiased tracking-tight"
+          >
+            Cuidamos a quienes <br /> amas como si fueran <br /> parte de <span
+              class="text-[#029EA1]">nuestra familia</span
+            >
+          </h1>
+          <p class="text-[#4B5563] text-[16px] leading-relaxed mb-6 max-w-lg">
+            En I Love My Pet, somos una clínica veterinaria en Managua dedicada
+            a brindar atención médica integral, con amor, responsabilidad y
+            profesionalismo.
+          </p>
+
+          <!-- 3 Iconos / Pilares (CORREGIDO EL TERCER ICONO) -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
+            <div class="flex flex-col items-start gap-2">
+              <div class="bg-[#D6EDEF] p-2.5 rounded-full text-[#1B2435]">
+                <PawPrint size={24} color="#029EA1" weight="bold" />
+              </div>
+              <div>
+                <h4 class="font-bold text-[#1B2435] text-[15px]">
+                  Amor por los animales
+                </h4>
+                <p class="text-[#6B7280] text-[12px] leading-tight">
+                  Cada mascota recibe el cariño y respeto que merece.
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-col items-start gap-2">
+              <div class="bg-[#D6EDEF] p-2.5 rounded-full text-[#1B2435]">
+                <Heart size={24} color="#029EA1" weight="bold" />
+              </div>
+              <div>
+                <h4 class="font-bold text-[#1B2435] text-[15px]">
+                  Profesionales certificados
+                </h4>
+                <p class="text-[#6B7280] text-[12px] leading-tight">
+                  Contamos con un equipo capacitado y en constante
+                  actualización.
+                </p>
+              </div>
+            </div>
+            <!-- CORREGIDO: Icono de Corazón + Cruz médica -->
+            <div class="flex flex-col items-start gap-2">
+              <div class="bg-[#D6EDEF] p-2.5 rounded-full text-[#1B2435]">
+                <div class="relative flex items-center justify-center">
+                  <Heart size={24} color="#029EA1" weight="bold" />
+                  <Cross
+                    size={12}
+                    color="white"
+                    weight="bold"
+                    class="absolute"
+                  />
+                </div>
+              </div>
+              <div>
+                <h4 class="font-bold text-[#1B2435] text-[15px]">
+                  Atención integral
+                </h4>
+                <p class="text-[#6B7280] text-[12px] leading-tight">
+                  Prevención, diagnóstico, tratamientos y seguimiento.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha (Imagen Perro/Gato) -->
+        <div class="relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <img
+            src="/hero-pets.png"
+            alt="Perro y gato felices"
+            class="w-full max-w-[550px] lg:max-w-[650px] h-auto object-contain transform lg:scale-105"
+          />
+          <div
+            class="absolute -bottom-4 -right-4 lg:-right-8 bg-[#029EA1] w-20 h-20 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20"
+          >
+            <PawPrint size={36} color="white" weight="bold" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN HISTORIA + LOCAL -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <!-- Imagen Fachada -->
+        <div>
+          <img
+            src="/fachada.png"
+            alt="Fachada de la clínica veterinaria"
+            class="w-full h-auto object-cover rounded-3xl shadow-xl border-[6px] border-white shadow-md"
+          />
+        </div>
+
+        <!-- Texto Historia -->
+        <div>
+          <!-- CORREGIDO: Color teal, mayúsculas y más peso -->
+          <div
+            class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-2"
+          >
+            NUESTRA HISTORIA
+          </div>
+          <h2
+            class="text-[2rem] sm:text-[2.5rem] font-bold text-[#1B2435] leading-tight mb-4 antialiased tracking-tight"
+          >
+            Una pasión que <br /> se convirtió en <span class="text-[#029EA1]"
+              >misión</span
+            >
+          </h2>
+          <p class="text-[#4B5563] text-[15px] leading-relaxed mb-4 max-w-lg">
+            I Love My Pet nació en Managua con el propósito de ofrecer una
+            atención veterinaria diferente: cercana, honesta y enfocada en el
+            bienestar integral de cada mascota.
+          </p>
+          <p class="text-[#4B5563] text-[15px] leading-relaxed max-w-lg mb-8">
+            Sabemos que tus mascotas son parte de tu familia, por eso trabajamos
+            cada día para brindarles una vida más saludable y feliz.
+          </p>
+          <a
+            href="/servicios"
+            class="inline-flex items-center gap-2 bg-[#029EA1] text-white px-7 py-3 rounded-full font-medium text-[15px] hover:bg-opacity-90 transition shadow-md"
+          >
+            Conoce nuestros servicios
+            <span class="text-lg font-bold leading-none">›</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRO EQUIPO -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <!-- CORREGIDO: Color teal, mayúsculas y más peso -->
+      <div class="flex items-center justify-center gap-2 mb-1">
+        <span
+          class="text-[#029EA1] font-bold text-[14px] tracking-wider uppercase"
+          >NUESTRO EQUIPO</span
+        >
+        <PawPrint size={20} color="#FC9F76" weight="bold" />
+      </div>
+      <h2
+        class="text-[2.2rem] sm:text-[2.6rem] font-bold text-[#1B2435] tracking-tight mb-10"
+      >
+        Profesionales que <span class="text-[#029EA1]">aman</span> lo que hacen
+      </h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Doctor 1 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100"
+        >
+          <div
+            class="w-28 h-28 mx-auto bg-gray-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=200&h=200&fit=crop"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[18px]">
+            Dr. Carlos Mendoza
+          </h3>
+          <p class="text-[#6B7280] text-[14px] mb-2">Médico Veterinario</p>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed mb-4">
+            Especialista en medicina interna y diagnóstico clínico.
+          </p>
+          <div class="flex justify-center gap-3 pt-2 border-t border-gray-200">
+            <FacebookLogo size={18} color="#029EA1" weight="bold" />
+            <InstagramLogo size={18} color="#029EA1" weight="bold" />
+            <EnvelopeSimple size={18} color="#029EA1" weight="fill" />
+          </div>
+        </div>
+
+        <!-- Doctor 2 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100"
+        >
+          <div
+            class="w-28 h-28 mx-auto bg-gray-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=200&h=200&fit=crop"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[18px]">
+            Dra. Mariana López
+          </h3>
+          <p class="text-[#6B7280] text-[14px] mb-2">Cirujana Veterinaria</p>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed mb-4">
+            Especialista en cirugía de tejidos blandos y ortopedia.
+          </p>
+          <div class="flex justify-center gap-3 pt-2 border-t border-gray-200">
+            <FacebookLogo size={18} color="#029EA1" weight="bold" />
+            <InstagramLogo size={18} color="#029EA1" weight="bold" />
+            <EnvelopeSimple size={18} color="#029EA1" weight="fill" />
+          </div>
+        </div>
+
+        <!-- Doctor 3 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100"
+        >
+          <div
+            class="w-28 h-28 mx-auto bg-gray-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=200&h=200&fit=crop"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[18px]">
+            Dra. Ana Gutiérrez
+          </h3>
+          <p class="text-[#6B7280] text-[14px] mb-2">Odontóloga Veterinaria</p>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed mb-4">
+            Especialista en salud dental y procedimientos orales.
+          </p>
+          <div class="flex justify-center gap-3 pt-2 border-t border-gray-200">
+            <FacebookLogo size={18} color="#029EA1" weight="bold" />
+            <InstagramLogo size={18} color="#029EA1" weight="bold" />
+            <EnvelopeSimple size={18} color="#029EA1" weight="fill" />
+          </div>
+        </div>
+
+        <!-- Doctor 4 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-6 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg border border-gray-100"
+        >
+          <div
+            class="w-28 h-28 mx-auto bg-gray-200 rounded-full overflow-hidden mb-4 border-4 border-white shadow-sm"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=200&h=200&fit=crop"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[18px]">Dr. Luis Rojas</h3>
+          <p class="text-[#6B7280] text-[14px] mb-2">Médico Veterinario</p>
+          <p class="text-[#4B5563] text-[13px] leading-relaxed mb-4">
+            Enfocado en medicina preventiva y vacunación.
+          </p>
+          <div class="flex justify-center gap-3 pt-2 border-t border-gray-200">
+            <FacebookLogo size={18} color="#029EA1" weight="bold" />
+            <InstagramLogo size={18} color="#029EA1" weight="bold" />
+            <EnvelopeSimple size={18} color="#029EA1" weight="fill" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATOS / STATS (CORREGIDO: Fondo gris, borde sutil, iconos variados) -->
+  <section class="py-12 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Stat 1: Huella (+500) -->
+        <div
+          class="bg-[#F8FAFB] border border-gray-100 rounded-2xl p-8 text-center shadow-[0_4px_10px_rgba(0,0,0,0.02)]"
+        >
+          <div
+            class="w-12 h-12 mx-auto bg-[#D6EDEF] rounded-full flex items-center justify-center mb-3"
+          >
+            <PawPrint size={24} color="#029EA1" weight="bold" />
+          </div>
+          <h4 class="text-[2rem] font-bold text-[#1B2435]">+500</h4>
+          <p class="text-[#4B5563] text-[14px] font-medium">
+            Mascotas felices atendidas
+          </p>
+        </div>
+
+        <!-- Stat 2: Corazón (+5) -->
+        <div
+          class="bg-[#F8FAFB] border border-gray-100 rounded-2xl p-8 text-center shadow-[0_4px_10px_rgba(0,0,0,0.02)]"
+        >
+          <div
+            class="w-12 h-12 mx-auto bg-[#D6EDEF] rounded-full flex items-center justify-center mb-3"
+          >
+            <Heart size={24} color="#FC9F76" weight="bold" />
+          </div>
+          <h4 class="text-[2rem] font-bold text-[#1B2435]">+5</h4>
+          <p class="text-[#4B5563] text-[14px] font-medium">
+            Años de experiencia en Managua
+          </p>
+        </div>
+
+        <!-- Stat 3: Cruz/Estetoscopio (+10) -->
+        <div
+          class="bg-[#F8FAFB] border border-gray-100 rounded-2xl p-8 text-center shadow-[0_4px_10px_rgba(0,0,0,0.02)]"
+        >
+          <div
+            class="w-12 h-12 mx-auto bg-[#D6EDEF] rounded-full flex items-center justify-center mb-3"
+          >
+            <Cross size={24} color="#029EA1" weight="bold" />
+          </div>
+          <h4 class="text-[2rem] font-bold text-[#1B2435]">+10</h4>
+          <p class="text-[#4B5563] text-[14px] font-medium">
+            Servicios veterinarios integrales
+          </p>
+        </div>
+
+        <!-- Stat 4: Persona (100%) -->
+        <div
+          class="bg-[#F8FAFB] border border-gray-100 rounded-2xl p-8 text-center shadow-[0_4px_10px_rgba(0,0,0,0.02)]"
+        >
+          <div
+            class="w-12 h-12 mx-auto bg-[#D6EDEF] rounded-full flex items-center justify-center mb-3"
+          >
+            <Heart size={24} color="#FC9F76" weight="bold" />
+          </div>
+          <h4 class="text-[2rem] font-bold text-[#1B2435]">100%</h4>
+          <p class="text-[#4B5563] text-[14px] font-medium">
+            Comprometidos con el bienestar animal
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

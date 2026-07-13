@@ -1,0 +1,537 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import {
+  PawPrint,
+  Heart,
+  Calendar,
+  Phone,
+  MapPin,
+  EnvelopeSimple,
+  FacebookLogo,
+  InstagramLogo,
+  WhatsappLogo,
+  User,
+  Paperclip,
+  CaretDown,
+  Check,
+  ShieldCheck,
+  Clock, // <--- AGREGA ESTO AQUÍ
+} from "@phosphor-icons/react";
+---
+
+<BaseLayout title="Contacto">
+  <!-- HERO CONTACTO -->
+  <section
+    class="bg-white relative overflow-hidden pt-16 pb-10 lg:pt-20 lg:pb-16"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div
+        class="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center"
+      >
+        <!-- Columna Izquierda (Texto) -->
+        <div>
+          <div
+            class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-4"
+          >
+            CONTACTO
+            <PawPrint size={16} color="#FC9F76" weight="bold" />
+          </div>
+
+          <!-- Título CORREGIDO: Más pequeño y solo 2 líneas -->
+          <!-- Título CORREGIDO (2 líneas exactas, más compacto) -->
+          <h1
+            class="text-[2.2rem] sm:text-[2.8rem] lg:text-[3rem] font-semibold text-[#1B2435] leading-[1.2] mb-4 antialiased tracking-tight"
+          >
+            Estamos aquí para <br /> cuidar a <span class="text-[#029EA1]"
+              >tu mejor amigo</span
+            >
+          </h1>
+
+          <!-- Párrafo CORREGIDO (Con peso medio y altura) -->
+          <p
+            class="text-[#4B5563] text-[15px] sm:text-[16px] font-medium leading-relaxed max-w-lg mb-8"
+          >
+            ¿Tienes dudas o necesitas agendar una cita? <br /> Escríbenos y nuestro
+            equipo estará encantado de ayudarte.
+          </p>
+
+          <div class="flex flex-wrap gap-4">
+            <a
+              href="#formulario"
+              class="flex items-center gap-2 bg-[#029EA1] text-white px-7 py-3 rounded-full font-medium hover:bg-opacity-90 transition shadow-md text-[15px]"
+            >
+              <Calendar size={18} weight="bold" />
+              Agendar Cita
+            </a>
+            <a
+              href="https://wa.me/50585005678"
+              target="_blank"
+              class="flex items-center gap-2 bg-white border-[1.5px] border-[#029EA1] text-[#029EA1] px-7 py-3 rounded-full font-medium hover:bg-gray-50 transition text-[15px]"
+            >
+              <WhatsappLogo size={18} weight="bold" />
+              Escríbenos por WhatsApp
+            </a>
+          </div>
+
+          <div class="flex items-center gap-2 mt-6 text-[#6B7280] text-[14px]">
+            <ShieldCheck size={18} color="#029EA1" weight="bold" />
+            <span>Respuesta rápida y atención personalizada</span>
+          </div>
+        </div>
+
+        <!-- Columna Derecha (Imagen) -->
+        <div class="relative flex justify-center lg:justify-end mt-4 lg:mt-0">
+          <img
+            src="/hero-pets.png"
+            alt="Perro y gato felices"
+            class="w-full max-w-[550px] lg:max-w-[650px] h-auto object-contain transform lg:scale-105"
+          />
+          <div
+            class="absolute -bottom-4 -right-4 lg:-right-8 bg-[#029EA1] w-20 h-20 rounded-full flex items-center justify-center shadow-xl border-4 border-white/20"
+          >
+            <PawPrint size={36} color="white" weight="bold" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO Y CONTACTO DIRECTO -->
+  <section id="formulario" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+        <!-- Columna Izquierda: Formulario -->
+        <div
+          class="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+        >
+          <div class="flex items-center gap-3 mb-6">
+            <div
+              class="w-10 h-10 bg-[#D6EDEF] rounded-full flex items-center justify-center text-[#029EA1]"
+            >
+              <EnvelopeSimple size={20} weight="bold" />
+            </div>
+            <h3 class="text-[1.5rem] font-bold text-[#1B2435]">
+              Envíanos un mensaje
+            </h3>
+          </div>
+          <p class="text-[#6B7280] text-[15px] font-medium mb-6">
+            Completa el formulario y nos pondremos en contacto contigo lo antes
+            posible.
+          </p>
+
+          <!-- 
+            IMPORTANTE: Reemplaza 'https://formspree.io/f/tu-id-aqui' por tu enlace real de Formspree.
+            Ejemplo: https://formspree.io/f/xjvqkzpl
+          -->
+          <form
+            action="https://formspree.io/f/tu-id-aqui"
+            method="POST"
+            class="space-y-4"
+          >
+            <!-- Input 1 -->
+            <div class="relative">
+              <div
+                class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]"
+              >
+                <User size={20} weight="bold" />
+              </div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Tu nombre"
+                required
+                class="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:border-[#029EA1] focus:ring-1 focus:ring-[#029EA1] bg-white text-[#1B2435] font-medium placeholder:text-[#9CA3AF] placeholder:font-normal transition"
+              />
+            </div>
+
+            <!-- Input 2 -->
+            <div class="relative">
+              <div
+                class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]"
+              >
+                <EnvelopeSimple size={20} weight="bold" />
+              </div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Tu correo electrónico"
+                required
+                class="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:border-[#029EA1] focus:ring-1 focus:ring-[#029EA1] bg-white text-[#1B2435] font-medium placeholder:text-[#9CA3AF] placeholder:font-normal transition"
+              />
+            </div>
+
+            <!-- Input 3 -->
+            <div class="relative">
+              <div
+                class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]"
+              >
+                <Phone size={20} weight="bold" />
+              </div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Tu número de teléfono"
+                required
+                class="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:border-[#029EA1] focus:ring-1 focus:ring-[#029EA1] bg-white text-[#1B2435] font-medium placeholder:text-[#9CA3AF] placeholder:font-normal transition"
+              />
+            </div>
+
+            <!-- Select -->
+            <div class="relative">
+              <div
+                class="absolute left-4 top-1/2 -translate-y-1/2 text-[#9CA3AF]"
+              >
+                <CaretDown size={20} weight="bold" />
+              </div>
+              <select
+                name="asunto"
+                required
+                class="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:border-[#029EA1] focus:ring-1 focus:ring-[#029EA1] bg-white text-[#1B2435] font-medium appearance-none transition"
+              >
+                <option value="" disabled selected
+                  >¿En qué podemos ayudarte?</option
+                >
+                <option value="Cita">Agendar una cita</option>
+                <option value="Consulta">Consulta general</option>
+                <option value="Emergencia">Emergencia</option>
+                <option value="Duda">Duda o información</option>
+              </select>
+            </div>
+
+            <!-- Textarea -->
+            <div class="relative">
+              <div class="absolute left-4 top-4 text-[#9CA3AF]">
+                <Paperclip size={20} weight="bold" />
+              </div>
+              <textarea
+                name="message"
+                rows="4"
+                placeholder="Cuéntanos más sobre tu consulta..."
+                required
+                class="w-full pl-12 pr-4 py-3.5 border border-gray-300 rounded-xl focus:outline-none focus:border-[#029EA1] focus:ring-1 focus:ring-[#029EA1] bg-white text-[#1B2435] font-medium placeholder:text-[#9CA3AF] placeholder:font-normal transition resize-none"
+              ></textarea>
+            </div>
+
+            <div class="flex items-start gap-3 mt-2">
+              <input
+                type="checkbox"
+                id="privacy"
+                required
+                class="mt-1 w-4 h-4 rounded border-gray-300 text-[#029EA1] focus:ring-[#029EA1]"
+              />
+              <label
+                for="privacy"
+                class="text-[#6B7280] text-[13px] font-medium leading-relaxed cursor-pointer"
+              >
+                Acepto la política de privacidad y el tratamiento de mis datos.
+              </label>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-[#029EA1] text-white font-bold py-3.5 rounded-full hover:bg-opacity-90 transition shadow-md text-[15px] flex items-center justify-center gap-2"
+            >
+              Enviar mensaje <span class="text-lg">→</span>
+            </button>
+
+            <div
+              class="flex items-center justify-center gap-2 mt-3 text-[#6B7280] text-[13px] font-medium"
+            >
+              <ShieldCheck size={16} color="#029EA1" weight="fill" />
+              <span>Tu información está segura con nosotros.</span>
+            </div>
+          </form>
+        </div>
+
+        <!-- Columna Derecha: Contacto Directo -->
+        <div class="flex flex-col gap-6">
+          <div
+            class="bg-white rounded-3xl p-8 md:p-10 border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)] flex-1"
+          >
+            <div class="flex items-center gap-3 mb-6">
+              <div
+                class="w-10 h-10 bg-[#D6EDEF] rounded-full flex items-center justify-center text-[#029EA1]"
+              >
+                <PawPrint size={20} weight="bold" />
+              </div>
+              <h3 class="text-[1.5rem] font-bold text-[#1B2435]">
+                O contáctanos directamente
+              </h3>
+            </div>
+
+            <div class="space-y-4">
+              <!-- Teléfono -->
+              <div
+                class="flex items-center gap-4 p-5 bg-[#F8FAFB] rounded-xl border border-gray-100"
+              >
+                <div
+                  class="w-12 h-12 bg-[#029EA1] rounded-full flex items-center justify-center text-white shrink-0"
+                >
+                  <Phone size={22} weight="bold" />
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2435] text-[16px]">Llámanos</p>
+                  <p class="text-[#1B2435] text-[15px] font-semibold">
+                    8888 1234
+                  </p>
+                  <p class="text-[#6B7280] text-[13px] font-medium">
+                    Lunes a Viernes 8:00 AM - 6:00 PM
+                  </p>
+                </div>
+              </div>
+
+              <!-- WhatsApp -->
+              <div
+                class="flex items-center gap-4 p-5 bg-[#F8FAFB] rounded-xl border border-gray-100"
+              >
+                <div
+                  class="w-12 h-12 bg-[#029EA1] rounded-full flex items-center justify-center text-white shrink-0"
+                >
+                  <WhatsappLogo size={22} weight="bold" />
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2435] text-[16px]">WhatsApp</p>
+                  <p class="text-[#1B2435] text-[15px] font-semibold">
+                    8500 5678
+                  </p>
+                  <p class="text-[#6B7280] text-[13px] font-medium">
+                    Atención rápida por WhatsApp
+                  </p>
+                </div>
+              </div>
+
+              <!-- Email -->
+              <div
+                class="flex items-center gap-4 p-5 bg-[#F8FAFB] rounded-xl border border-gray-100"
+              >
+                <div
+                  class="w-12 h-12 bg-[#029EA1] rounded-full flex items-center justify-center text-white shrink-0"
+                >
+                  <EnvelopeSimple size={22} weight="bold" />
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2435] text-[16px]">
+                    Correo electrónico
+                  </p>
+                  <p class="text-[#029EA1] text-[15px] font-semibold">
+                    info@ilovemypet.com.ni
+                  </p>
+                  <p class="text-[#6B7280] text-[13px] font-medium">
+                    Responderemos pronto
+                  </p>
+                </div>
+              </div>
+
+              <!-- Ubicación -->
+              <div
+                class="flex items-center gap-4 p-5 bg-[#F8FAFB] rounded-xl border border-gray-100"
+              >
+                <div
+                  class="w-12 h-12 bg-[#029EA1] rounded-full flex items-center justify-center text-white shrink-0"
+                >
+                  <MapPin size={22} weight="bold" />
+                </div>
+                <div>
+                  <p class="font-bold text-[#1B2435] text-[16px]">Visítanos</p>
+                  <p class="text-[#1B2435] text-[15px] font-semibold">
+                    De los semáforos de Rubén Darío 2c. al lago, 1c. arriba.
+                    Managua, Nicaragua.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Redes Sociales -->
+          <div
+            class="bg-white rounded-3xl p-6 md:p-8 border border-gray-200 shadow-[0_4px_20px_rgba(0,0,0,0.03)]"
+          >
+            <p class="font-bold text-[#1B2435] text-[16px] mb-4 text-center">
+              Síguenos en nuestras redes
+            </p>
+            <div class="flex justify-center gap-4">
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#F8FAFB] rounded-full flex items-center justify-center text-[#029EA1] hover:bg-[#029EA1] hover:text-white transition border border-gray-200"
+              >
+                <FacebookLogo size={20} weight="bold" />
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#F8FAFB] rounded-full flex items-center justify-center text-[#029EA1] hover:bg-[#029EA1] hover:text-white transition border border-gray-200"
+              >
+                <InstagramLogo size={20} weight="bold" />
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#F8FAFB] rounded-full flex items-center justify-center text-[#029EA1] hover:bg-[#029EA1] hover:text-white transition border border-gray-200"
+              >
+                <WhatsappLogo size={20} weight="bold" />
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 bg-[#F8FAFB] rounded-full flex items-center justify-center text-[#029EA1] hover:bg-[#029EA1] hover:text-white transition border border-gray-200"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  ><path
+                    d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93v6.16c0 2.52-1.12 4.84-3.08 6.22-1.69 1.18-3.89 1.54-5.91.95-2.09-.61-3.89-2.12-4.73-4.15-.74-1.77-.69-3.83.19-5.54.85-1.66 2.46-2.95 4.29-3.35v4.15c-.65.17-1.28.45-1.79.88-.82.68-1.26 1.74-1.08 2.79.17 1.05.9 1.97 1.88 2.47 1.23.63 2.77.47 3.83-.36.96-.75 1.53-1.93 1.49-3.15l-.02-12.3z"
+                  ></path></svg
+                >
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAPA Y UBICACIÓN -->
+  <section class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-[#F3F6F8] rounded-3xl p-8 md:p-10 border border-gray-200 flex flex-col lg:flex-row gap-10 overflow-hidden"
+      >
+        <!-- Mapa -->
+        <div
+          class="flex-1 w-full h-[300px] lg:h-auto rounded-2xl overflow-hidden shadow-md relative"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3900.631984964816!2d-86.25618082413702!3d12.12762318810594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDA3JzM5LjUiTiA4NsKwMTUnMTQuNCJX!5e0!3m2!1ses!2sni!4v1700000000000"
+            width="100%"
+            height="100%"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          >
+          </iframe>
+          <div
+            class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white p-2 rounded-full shadow-lg"
+          >
+            <MapPin size={28} color="#029EA1" weight="fill" />
+          </div>
+        </div>
+
+        <!-- Información -->
+        <div class="flex-1 flex flex-col justify-center">
+          <div
+            class="flex items-center gap-2 text-[#029EA1] font-bold text-[14px] uppercase tracking-wider mb-2"
+          >
+            ¿CÓMO LLEGAR?
+          </div>
+          <h3
+            class="text-[2rem] sm:text-[2.4rem] font-bold text-[#1B2435] leading-tight mb-3"
+          >
+            Estamos en Managua
+          </h3>
+          <p class="text-[#4B5563] text-[15px] leading-relaxed mb-6 max-w-md">
+            Nuestra clínica está ubicada en una zona accesible con parqueo
+            disponible para tu comodidad.
+          </p>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            class="inline-flex items-center gap-2 bg-white border border-[#029EA1] text-[#029EA1] px-6 py-3 rounded-full font-bold hover:bg-[#029EA1] hover:text-white transition shadow-sm text-[15px] w-fit"
+          >
+            <MapPin size={18} color="currentColor" weight="fill" />
+            Ver en Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTROS VALORES (Un solo bloque, alineación horizontal con iconos a la izquierda) -->
+  <section class="py-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Contenedor gris único (como en el original) -->
+      <div class="bg-[#F3F6F8] rounded-3xl p-8 lg:p-10 border border-gray-200">
+        <!-- Grid de 4 items en una sola fila, con separadores verticales -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 divide-y md:divide-y-0 lg:divide-x divide-gray-200"
+        >
+          <!-- Ítem 1 -->
+          <div class="flex items-start gap-4 px-4 lg:pl-0 py-5 lg:py-0 pr-4">
+            <div
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#029EA1] shadow-sm shrink-0 mt-0.5"
+            >
+              <Heart size={20} color="#029EA1" weight="bold" />
+            </div>
+            <div>
+              <h4
+                class="font-bold text-[#1B2435] text-[15px] leading-tight mb-1"
+              >
+                Atención con amor
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Tratamos a tu mascota como parte de nuestra familia.
+              </p>
+            </div>
+          </div>
+
+          <!-- Ítem 2 -->
+          <div class="flex items-start gap-4 px-4 py-5 lg:py-0 md:px-6">
+            <div
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#029EA1] shadow-sm shrink-0 mt-0.5"
+            >
+              <ShieldCheck size={20} color="#029EA1" weight="bold" />
+            </div>
+            <div>
+              <h4
+                class="font-bold text-[#1B2435] text-[15px] leading-tight mb-1"
+              >
+                Profesionales certificados
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Contamos con médicos veterinarios altamente capacitados.
+              </p>
+            </div>
+          </div>
+
+          <!-- Ítem 3 -->
+          <div class="flex items-start gap-4 px-4 py-5 lg:py-0 md:px-6">
+            <div
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#029EA1] shadow-sm shrink-0 mt-0.5"
+            >
+              <Clock size={20} color="#029EA1" weight="bold" />
+            </div>
+            <div>
+              <h4
+                class="font-bold text-[#1B2435] text-[15px] leading-tight mb-1"
+              >
+                Respuesta rápida
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Te respondemos lo antes posible para brindarte la mejor
+                solución.
+              </p>
+            </div>
+          </div>
+
+          <!-- Ítem 4 -->
+          <div class="flex items-start gap-4 px-4 lg:pr-0 py-5 lg:py-0 md:pl-6">
+            <div
+              class="w-10 h-10 bg-white rounded-full flex items-center justify-center text-[#029EA1] shadow-sm shrink-0 mt-0.5"
+            >
+              <PawPrint size={20} color="#029EA1" weight="bold" />
+            </div>
+            <div>
+              <h4
+                class="font-bold text-[#1B2435] text-[15px] leading-tight mb-1"
+              >
+                Cuidado integral
+              </h4>
+              <p class="text-[#6B7280] text-[13px] font-medium leading-relaxed">
+                Ofrecemos servicios completos para todas las etapas de su vida.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

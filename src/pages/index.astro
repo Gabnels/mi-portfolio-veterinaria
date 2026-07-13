@@ -1,17 +1,432 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+// Importamos los iconos de Phosphor (para el resto de la web)
+import {
+  Calendar,
+  PawPrint,
+  Heart,
+  Phone,
+  MapPin,
+} from "@phosphor-icons/react";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Inicio">
+  <!-- HERO SECTION - ACABADO PREMIUM -->
+  <section
+    class="bg-white relative overflow-hidden pt-12 pb-16 lg:pt-16 lg:pb-24"
+  >
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <!-- Columna Izquierda (Texto) -->
+        <div class="pr-0 lg:pr-6">
+          <!-- Etiqueta superior -->
+          <div
+            class="inline-flex items-center gap-2 text-[#1B2435] font-medium text-[13px] uppercase tracking-wider mb-5"
+          >
+            Cuidamos a quienes amas
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#FC9F76"
+              stroke-width="2.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path
+                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+              ></path></svg
+            >
+          </div>
+
+          <!-- Título PREMIUM -->
+          <h1
+            class="text-[2.6rem] sm:text-[3.2rem] lg:text-[4rem] font-semibold text-[#1B2435] leading-[1.05] mb-4 antialiased tracking-tight"
+          >
+            Salud, amor y <br /> bienestar <span class="text-[#029EA1]"
+              >para tu mejor amigo</span
+            >
+          </h1>
+
+          <p
+            class="text-[#4B5563] text-[15px] sm:text-[17px] mb-7 max-w-md leading-relaxed"
+          >
+            Clínica veterinaria en Managua, Nicaragua. <br /> Servicios de calidad
+            con amor y profesionalismo.
+          </p>
+
+          <div class="flex flex-wrap items-center gap-4">
+            <!-- Botón Agendar Cita -->
+            <a
+              href="/contacto"
+              class="flex items-center gap-2.5 bg-[#029EA1] text-white px-7 py-3 rounded-full font-medium hover:bg-opacity-90 transition shadow-sm text-[15px]"
+            >
+              <Calendar size={18} weight="bold" />
+              Agendar Cita
+            </a>
+
+            <!-- Botón Ver Servicios -->
+            <a
+              href="/servicios"
+              class="flex items-center gap-2.5 bg-white border-[1.5px] border-[#FC9F76] px-7 py-3 rounded-full font-medium hover:bg-gray-50 transition text-[15px] text-[#FC9F76]"
+            >
+              <PawPrint size={18} color="#FC9F76" weight="bold" />
+              Ver Servicios
+            </a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-3">
+            <div class="flex -space-x-2.5">
+              <img
+                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop"
+                class="w-9 h-9 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
+                class="w-9 h-9 rounded-full border-2 border-white object-cover"
+              />
+              <img
+                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=100&h=100&fit=crop"
+                class="w-9 h-9 rounded-full border-2 border-white object-cover"
+              />
+            </div>
+            <div>
+              <p class="text-xs font-bold text-[#1B2435]">
+                +500 mascotas felices
+              </p>
+              <p class="text-[10px] text-[#4B5563]">en Managua</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha (Imagen) -->
+        <div class="relative flex justify-center lg:justify-end mt-8 lg:mt-0">
+          <img
+            src="/hero-pets.png"
+            alt="Perro y gato felices"
+            class="w-full max-w-[500px] lg:max-w-[650px] h-auto object-contain transform lg:scale-105"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTROS SERVICIOS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- ENCABEZADO CON FUENTES AJUSTADAS -->
+      <div class="text-center mb-14">
+        <div class="flex items-center justify-center gap-3 mb-2">
+          <span
+            class="text-[#029EA1] font-bold text-[15px] tracking-wider uppercase"
+            >Lo mejor para ellos</span
+          >
+          <PawPrint size={24} color="#FC9F76" weight="bold" />
+        </div>
+        <h2
+          class="text-[2.2rem] sm:text-[2.8rem] font-semibold text-[#1B2435] tracking-tight"
+        >
+          Nuestros Servicios
+        </h2>
+      </div>
+
+      <!-- Grid de 5 columnas -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        <!-- Consulta General -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
+        >
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center mb-5 text-[#029EA1]"
+          >
+            <!-- SVG Estetoscopio -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="52"
+              height="52"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#029EA1"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="M11 2v2"></path><path d="M5 2v2"></path><path
+                d="M5 5a3 3 0 0 0-3 3v2c0 4 4 4 4 4s4 0 4-4V8a3 3 0 0 0-3-3H5z"
+              ></path><path
+                d="M11 5a3 3 0 0 1 3 3v2c0 4-4 4-4 4s-4 0-4-4V8a3 3 0 0 1 3-3h1z"
+              ></path><path d="M14 14v2"></path><circle cx="14" cy="16" r="2"
+              ></circle></svg
+            >
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[19px] mb-2">
+            Consulta General
+          </h3>
+          <p class="text-[#6B7280] text-[14px] font-medium leading-relaxed">
+            Revisiones completas para mantener a tu mascota sana.
+          </p>
+        </div>
+
+        <!-- Vacunación -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
+        >
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center mb-5 text-[#029EA1]"
+          >
+            <!-- SVG Jeringa -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="52"
+              height="52"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#029EA1"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path d="m18 2 4 4"></path><path d="m17 7 2-2"></path><path
+                d="m14 10 6-6"></path><path d="m8 14-4 4"></path><path
+                d="m12 10-4 4"></path><path d="M4 18v4h4"></path><path
+                d="M14 4h-4a4 4 0 0 0-4 4v4"></path></svg
+            >
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[19px] mb-2">Vacunación</h3>
+          <p class="text-[#6B7280] text-[14px] font-medium leading-relaxed">
+            Protocolos de vacunación seguros y efectivos.
+          </p>
+        </div>
+
+        <!-- Cirugía -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
+        >
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center mb-5 text-[#029EA1]"
+          >
+            <PawPrint size={52} strokeWidth={1.8} color="#029EA1" />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[19px] mb-2">Cirugía</h3>
+          <p class="text-[#6B7280] text-[14px] font-medium leading-relaxed">
+            Procedimientos seguros con equipos modernos.
+          </p>
+        </div>
+
+        <!-- Odontología -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
+        >
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center mb-5 text-[#029EA1]"
+          >
+            <!-- SVG Diente -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="52"
+              height="52"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#029EA1"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              ><path
+                d="M12 2c-2 0-3 1-3 3 0 4-1 7-4 7 0 0 1 3 4 3s3-2 3-5 1-5 3-5 3 2 3 5 0 5 3 5 4-3 4-3c-3 0-4-3-4-7 0-2-1-3-3-3"
+              ></path><path d="M11 12v6"></path><path d="M13 12v6"></path></svg
+            >
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[19px] mb-2">Odontología</h3>
+          <p class="text-[#6B7280] text-[14px] font-medium leading-relaxed">
+            Cuidado dental para una vida más saludable.
+          </p>
+        </div>
+
+        <!-- Emergencias -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg group"
+        >
+          <div
+            class="w-16 h-16 mx-auto flex items-center justify-center mb-5 text-[#029EA1]"
+          >
+            <Heart
+              size={52}
+              strokeWidth={1.8}
+              color="#029EA1"
+              weight="regular"
+            />
+          </div>
+          <h3 class="font-bold text-[#1B2435] text-[19px] mb-2">Emergencias</h3>
+          <p class="text-[#6B7280] text-[14px] font-medium leading-relaxed">
+            Atención de emergencias veterinarias.
+          </p>
+        </div>
+      </div>
+
+      <!-- Botón inferior -->
+      <div class="text-center mt-12">
+        <a
+          href="/servicios"
+          class="inline-flex items-center gap-1.5 bg-[#029EA1] text-white px-8 py-3.5 rounded-full font-medium text-[15px] hover:bg-opacity-90 transition shadow-md"
+        >
+          Ver todos los servicios
+          <span class="text-lg font-bold leading-none">›</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN LOCAL (UBICACIÓN) -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        class="bg-[#029EA1] rounded-3xl p-8 md:p-10 flex flex-col md:flex-row gap-8 md:gap-12 items-center overflow-hidden relative"
+      >
+        <!-- Columna Izquierda (Texto) -->
+        <div class="flex-1 z-10 text-white">
+          <!-- Etiqueta superior -->
+          <div class="flex items-center gap-2 font-medium text-[15px] mb-3">
+            <MapPin size={22} weight="fill" />
+            <span>ESTAMOS EN MANAGUA</span>
+            <Heart size={18} color="#FC9F76" weight="regular" />
+          </div>
+
+          <h3 class="text-[2rem] md:text-[2.5rem] font-bold mb-4 leading-tight">
+            Visítanos en nuestro local
+          </h3>
+
+          <p class="mb-7 text-white/90 text-[15px] leading-relaxed max-w-md">
+            De los semáforos de Rubén Darío 2c. al lago, 1c. arriba. Managua,
+            Nicaragua.
+          </p>
+
+          <a
+            href="#"
+            class="inline-flex items-center gap-2 bg-white text-[#029EA1] px-8 py-3.5 rounded-full font-bold hover:bg-opacity-90 transition shadow-md"
+          >
+            <MapPin size={20} color="#029EA1" weight="fill" />
+            Cómo llegar
+          </a>
+        </div>
+
+        <!-- Columna Derecha (Tu Imagen Real) -->
+        <div class="flex-1 w-full relative z-10">
+          <!-- CAMBIA EL NOMBRE "mi-local.jpg" POR EL NOMBRE DE TU ARCHIVO -->
+          <img
+            src="/fachada.png"
+            alt="Fachada de la clínica veterinaria I love my pet"
+            class="w-full h-auto object-cover rounded-2xl shadow-xl border-[6px] border-white"
+          />
+        </div>
+
+        <!-- Decoración de fondo sutil -->
+        <div
+          class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-white/5"
+        >
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Encabezado -->
+      <div class="text-center mb-14">
+        <div class="flex items-center justify-center gap-2 mb-2">
+          <span
+            class="text-[#029EA1] font-bold text-[14px] tracking-wider uppercase"
+            >TESTIMONIOS</span
+          >
+          <PawPrint size={20} color="#FC9F76" weight="bold" />
+        </div>
+        <h2
+          class="text-[2.2rem] sm:text-[2.8rem] font-semibold text-[#1B2435] tracking-tight"
+        >
+          Lo que dicen nuestros clientes
+        </h2>
+      </div>
+
+      <!-- Grid de 3 columnas -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Testimonio 1 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop"
+              class="w-14 h-14 rounded-full object-cover border-2 border-white"
+            />
+            <div class="flex flex-col justify-center">
+              <h4 class="font-bold text-[#1B2435] text-[17px]">
+                María José R.
+              </h4>
+              <div class="flex text-[#FBBF24] text-sm mt-0.5">★★★★★</div>
+            </div>
+          </div>
+          <p class="text-[#4B5563] text-[15px] font-medium leading-relaxed">
+            "Excelente atención y mucho amor por los peluditos. Mi perro se
+            siente como en casa."
+          </p>
+          <!-- Corazón hueco y pequeño abajo a la derecha -->
+          <Heart
+            size={20}
+            color="#FC9F76"
+            class="absolute bottom-5 right-5"
+            weight="regular"
+          />
+        </div>
+
+        <!-- Testimonio 2 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop"
+              class="w-14 h-14 rounded-full object-cover border-2 border-white"
+            />
+            <div class="flex flex-col justify-center">
+              <h4 class="font-bold text-[#1B2435] text-[17px]">Carlos M.</h4>
+              <div class="flex text-[#FBBF24] text-sm mt-0.5">★★★★★</div>
+            </div>
+          </div>
+          <p class="text-[#4B5563] text-[15px] font-medium leading-relaxed">
+            "La mejor clínica veterinaria en Managua. 100% recomendados."
+          </p>
+          <Heart
+            size={20}
+            color="#FC9F76"
+            class="absolute bottom-5 right-5"
+            weight="regular"
+          />
+        </div>
+
+        <!-- Testimonio 3 -->
+        <div
+          class="bg-[#F8FAFB] rounded-2xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] relative transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+        >
+          <div class="flex items-center gap-4 mb-4">
+            <img
+              src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop"
+              class="w-14 h-14 rounded-full object-cover border-2 border-white"
+            />
+            <div class="flex flex-col justify-center">
+              <h4 class="font-bold text-[#1B2435] text-[17px]">Ana L.</h4>
+              <div class="flex text-[#FBBF24] text-sm mt-0.5">★★★★★</div>
+            </div>
+          </div>
+          <p class="text-[#4B5563] text-[15px] font-medium leading-relaxed">
+            "Me encanta su tienda, siempre encuentro todo lo que necesita mi
+            gatita."
+          </p>
+          <Heart
+            size={20}
+            color="#FC9F76"
+            class="absolute bottom-5 right-5"
+            weight="regular"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
